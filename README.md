@@ -1,2 +1,2 @@
-# https://blobby-boi.github.io/URLRedirectorTest
-testing stuff for URLRedirector
+# https://blobby-boi.github.io/BlobeBlocker
+Like URLRedirector but it unblocks stuffs
