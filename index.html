@@ -75,12 +75,6 @@
   <script>
     function redirect() {
       var url = document.getElementById('url').value;
-
-      // If the URL does not start with "https://" or "http://", prepend "https://" to it.
-      if (url.indexOf('https://') !== 0 && url.indexOf('http://') !== 0) {
-        url = 'https://' + url;
-      }
-
       window.location.href = url;
     }
   </script>
