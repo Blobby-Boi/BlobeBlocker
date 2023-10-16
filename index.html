@@ -2,7 +2,6 @@
 <html>
 <head>
   <title>URLRedirector</title>
-  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Varela+Round:wght@400&display=swap');
 
@@ -23,7 +22,7 @@
       height: 150px;
       margin-left: -170px;
       background-color: black;
-      color: #ADD8E6;
+      color: white;
       outline: 10px solid #ADD8E6;
     }
 
@@ -61,21 +60,30 @@
       bottom: 70px;
       left: 50%;
       transform: translateX(-50%);
-      width: 100px;
-      height: 100px;
+      width: 40px;
+      height: 40px;
     }
   </style>
 </head>
 <body>
   <div class="text">URLRedirector</div>
   <input type="text" id="url" placeholder="Enter URL here">
-  <button class="redirect-button" onclick="redirect()">Redirect</button>
-  <img src="https://lh3.googleusercontent.com/a/ACg8ocKlmLbwR14KND2gVGIzp_yF-REPA8xNxpimGRjH4ererw=s288-c-no" class="new-image">
+  <button class="redirect-button" onclick="iframe()">Iframe</button>
 
   <script>
-    function redirect() {
+    function iframe() {
       var url = document.getElementById('url').value;
-      window.location.href = url;
+
+      // If the URL does not start with "https://" or "http://", prepend "https://" to it.
+      if (url.indexOf('https://') !== 0 && url.indexOf('http://') !== 0) {
+        url = 'https://' + url;
+      }
+
+      var iframe = document.createElement('iframe');
+      iframe.src = url;
+      iframe.width = '100%';
+      iframe.height = '100%';
+      document.body.appendChild(iframe);
     }
   </script>
 </body>
