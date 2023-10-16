@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>URLRedirector</title>
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Varela+Round:wght@400&display=swap');
+
+    input#url, button.redirect-button {
+      margin: 0 auto;
+      display: block;
+      position: absolute;
+      top: 60%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: 'Varela Round', sans-serif;
+      font-size: 50px;
+      border-radius: 20px;
+    }
+
+    input#url {
+      width: 500px;
+      height: 150px;
+      margin-left: -170px;
+      background-color: black;
+      color: #ADD8E6;
+      outline: 10px solid #ADD8E6;
+    }
+
+    body {
+      background-color: black;
+    }
+
+    button.redirect-button {
+      background-color: green;
+      border: none;
+      color: white;
+      padding: 10px;
+      width: 300px;
+      height: 150px;
+      margin-left: 270px;
+      outline: 10px solid darkgreen;
+    }
+
+    button.redirect-button:hover {
+      filter: saturate(4);
+    }
+
+    .text {
+      position: absolute;
+      top: 150px;
+      right: 25%;
+      font-family: 'Varela Round', sans-serif;
+      font-size: 100px;
+      font-weight: bold;
+      color: #ADD8E6;
+    }
+
+    .new-image {
+      position: absolute;
+      bottom: 70px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 100px;
+    }
+  </style>
+</head>
+<body>
+  <div class="text">URLRedirector</div>
+  <input type="text" id="url" placeholder="Enter URL here">
+  <button class="redirect-button" onclick="redirect()">Redirect</button>
+  <img src="https://lh3.googleusercontent.com/a/ACg8ocKlmLbwR14KND2gVGIzp_yF-REPA8xNxpimGRjH4ererw=s288-c-no" class="new-image">
+
+  <script>
+    function redirect() {
+      var url = document.getElementById('url').value;
+
+      // If the URL does not start with "https://" or "http://", prepend "https://" to it.
+      if (url.indexOf('https://') !== 0 && url.indexOf('http://') !== 0) {
+        url = 'https://' + url;
+      }
+
+      window.location.href = url;
+    }
+  </script>
+</body>
+</html>
