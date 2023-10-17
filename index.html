@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>URLRedirector</title>
+  <title>BlobeBlocker</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Varela+Round:wght@400&display=swap');
 
@@ -88,38 +88,38 @@
 </head>
 <body>
   <div class="image"></div>
-  <div class="text">URLRedirector</div>
+  <div class="text">BlobeBlocker</div>
   <input type="text" id="url" placeholder="Enter URL here">
   <button class="redirect-button" onclick="iframe()">Load Page</button>
 
   <script>
     function iframe() {
-  // Get the URL from the text box.
-  var url = document.getElementById('url').value;
+      // Get the URL from the text box.
+      var url = document.getElementById('url').value;
 
-  // If the URL does not start with "https://" or "http://", prepend "https://" to it.
-  if (url.indexOf('https://') !== 0 && url.indexOf('http://') !== 0) {
-    url = 'https://' + url;
-  }
+      // If the URL does not start with "https://" or "http://", prepend "https://" to it.
+      if (url.indexOf('https://') !== 0 && url.indexOf('http://') !== 0) {
+        url = 'https://' + url;
+      }
 
-  // Create an image element.
-  var image = document.createElement('img');
+      // Create an image element.
+      var image = document.createElement('img');
 
-  // Set the image's src attribute to a URL of your choice.
-  image.src = 'https://example.com/image.png';
+      // Set the image's src attribute to a URL of your choice.
+      image.src = 'https://example.com/image.png';
 
-  // Append the image to the body of the document.
-  document.body.appendChild(image);
+      // Append the image to the body of the document.
+      document.body.appendChild(image);
 
-  // Create an iframe element.
-  var iframe = document.createElement('iframe');
+      // Create an iframe element.
+      var iframe = document.createElement('iframe');
 
-  // Set the iframe's src attribute to the URL.
-  iframe.src = url;
+      // Set the iframe's src attribute to the URL.
+      iframe.src = 'https://tool.geometrytip.site/launch.html?domain=' + url;
 
-  // Append the iframe to the body of the document.
-  document.body.appendChild(iframe);
-}
+      // Append the iframe to the body of the document.
+      document.body.appendChild(iframe);
+    }
   </script>
 </body>
 </html>
