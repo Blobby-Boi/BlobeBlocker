@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>BlobeBlocker</title>
+  <title>URLRedirector</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Varela+Round:wght@400&display=swap');
 
@@ -72,27 +72,54 @@
       right: 0;
       width: 100%;
       height: 100%;
+      border: none;
+    }
+
+    .image {
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
     }
   </style>
 </head>
 <body>
-  <div class="text">BlobeBlocker</div>
+  <div class="image"></div>
+  <div class="text">URLRedirector</div>
   <input type="text" id="url" placeholder="Enter URL here">
   <button class="redirect-button" onclick="iframe()">Load Page</button>
 
   <script>
     function iframe() {
-      var url = document.getElementById('url').value;
+  // Get the URL from the text box.
+  var url = document.getElementById('url').value;
 
-      // If the URL does not start with "https://" or "http://", prepend "https://" to it.
-      if (url.indexOf('https://') !== 0 && url.indexOf('http://') !== 0) {
-        url = 'https://' + url;
-      }
+  // If the URL does not start with "https://" or "http://", prepend "https://" to it.
+  if (url.indexOf('https://') !== 0 && url.indexOf('http://') !== 0) {
+    url = 'https://' + url;
+  }
 
-      var iframe = document.createElement('iframe');
-      iframe.src = 'https://tool.geometrytip.site/launch.html?domain=' + url;
-      document.body.appendChild(iframe);
-    }
+  // Create an image element.
+  var image = document.createElement('img');
+
+  // Set the image's src attribute to a URL of your choice.
+  image.src = 'https://example.com/image.png';
+
+  // Append the image to the body of the document.
+  document.body.appendChild(image);
+
+  // Create an iframe element.
+  var iframe = document.createElement('iframe');
+
+  // Set the iframe's src attribute to the URL.
+  iframe.src = url;
+
+  // Append the iframe to the body of the document.
+  document.body.appendChild(iframe);
+}
   </script>
 </body>
 </html>
