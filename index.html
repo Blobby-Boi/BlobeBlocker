@@ -95,15 +95,6 @@
       height: 100%;
       z-index: 2;
     }
-
-    .image {
-      position: absolute;
-      top: 200px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 200px;
-      height: 200px;
-    }
   </style>
 </head>
 <body>
@@ -112,7 +103,6 @@
   <div class="text">URLRedirector</div>
   <input type="text" id="url" placeholder="Enter URL here">
   <button class="redirect-button" onclick="iframe()">Load Page</button>
-  <img src="https://tool.geometrytip.site/logo.png" class="image">
 
   <script>
     function iframe() {
@@ -142,6 +132,5 @@
   // Display the other iframe.
   document.querySelector('.other-iframe').style.display = 'block';
 }
- </script>
+  </script>
 </body>
-</html>
